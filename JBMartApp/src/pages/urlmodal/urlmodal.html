@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name='backspace'></ion-icon>        
+      </button>
+    </ion-buttons>
+    <ion-title>{{ 'SERVICE_TERM' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<iframe data-tap-disabled="true" style="height:100%;width:100%;" [src]="getURL()"></iframe>

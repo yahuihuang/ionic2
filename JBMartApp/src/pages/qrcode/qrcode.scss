@@ -1,0 +1,61 @@
+page-qrcode {
+    .card-background-page {
+
+      ion-card {
+        position: relative;
+        text-align: center;
+      }
+
+      .card-title {
+        position: absolute;
+        top: 36%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .card-subtitle {
+        font-size: 1.0em;
+        position: absolute;
+        top: 52%;
+        width: 100%;
+        color: #fff;
+      }
+
+    }
+    
+    .grid-basic-page {
+      ion-col div {
+        background-color: #f0f5ff;
+        border: 1px solid #e6e9ee;
+        border-radius: 2px;
+        padding: 5px;
+        text-align: center;
+      }
+
+      p {
+        padding: 10px 0 0 10px !important;
+        margin: 0;
+      }
+
+    }
+    
+    .icons-basic-page {
+      ion-icon {
+        font-size: 50px;
+      }
+
+      ion-row {
+        height: 100%;
+        flex-wrap: wrap;
+      }
+
+      ion-col {
+        flex: 0 0 25%;
+        max-width: 25%;
+        text-align: center;
+        padding: 10px 5px;
+      }
+    }
+}

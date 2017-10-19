@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar primary [hideBackButton]="true">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="openMenu(1)">
+        <ion-icon name='menu'></ion-icon>
+      </button>
+      <button ion-button icon-only>
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+      
+    <ion-title>{{title}}</ion-title>
+      
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openCart()">
+        <ion-icon name="cart"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="openMenu(2)">
+        <ion-icon name="person"></ion-icon>
+      </button>
+<!--        
+      <button hideWhen="cordova" (click)="save()"><ion-icon md="md-add" ios="ios-add"></ion-icon></button>
+      <button (click)="search()"><ion-icon md="md-search" ios="ios-search-outline"></ion-icon></button>
+      <button (click)="notifications()"><ion-icon md="md-notifications" ios="ios-notifications-outline"></ion-icon></button>
+      <button (click)="settings()"><ion-icon md="md-settings" ios="ios-settings-outline"></ion-icon></button>
+//-->
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-tabs #myTabs selectedIndex="0" tabs-style="tabs-icon-top" tabs-type="tabs-default">
+  <ion-tab [root]="tab1Root" [tabTitle]="tab1Title" tabIcon="home" (ionSelect)="this.title = tab1Title"></ion-tab>
+  <ion-tab [root]="tab2Root" [tabTitle]="tab2Title" tabIcon="search" (ionSelect)="this.title = tab2Title"></ion-tab>
+  <ion-tab [root]="tab3Root" [tabTitle]="tab3Title" tabIcon="cog" (ionSelect)="this.title = tab3Title"></ion-tab>
+  <ion-tab [root]="tab4Root" [tabTitle]="tab4Title" tabIcon="qr-scanner" (ionSelect)="this.title = tab4Title"></ion-tab>
+</ion-tabs>

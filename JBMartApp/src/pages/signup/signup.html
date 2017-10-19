@@ -1,0 +1,262 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'SIGNUP_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="loginForm" (ngSubmit)="doSignup(loginForm.value)">
+    <ion-list>
+      <ion-item [class.error]="!loginForm.controls.acct.valid">
+        <ion-label fixed>{{ 'ACCT' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.acct" formControlName="acct"
+            placeholder="{{ 'ACCT' | translate }}"></ion-input>
+      </ion-item>
+      <ion-badge *ngIf="(loginForm.controls.acct.hasError('required') || loginForm.controls.acct.hasError('minlength') ||     
+        loginForm.controls.acct.hasError('maxlength') )" color="secondary">
+          * {{ 'ACCT_ERROR' | translate }}</ion-badge>
+     
+      <ion-item [class.error]="!loginForm.controls.email.valid">
+        <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
+        <ion-input type="email" [(ngModel)]="account.email" formControlName="email"
+            name="email" placeholder="{{ 'EMAIL' | translate }}"></ion-input>
+      </ion-item>           
+      <ion-badge *ngIf="(loginForm.controls.email.hasError('required') || loginForm.controls.email.hasError('pattern') )" 
+           color="secondary">* {{ 'EMAIL_ERROR' | translate }}</ion-badge>
+        
+      <ion-item>
+        <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="account.password" formControlName="password"
+            placeholder="{{ 'PASSWORD' | translate }}"></ion-input>
+      </ion-item>
+      <ion-badge *ngIf="(loginForm.controls.password.hasError('required') || loginForm.controls.password.hasError('minlength') ||     
+        loginForm.controls.password.hasError('maxlength') )" color="secondary">
+          * {{ 'PASSWORD_ERROR' | translate }}</ion-badge>
+        
+      <ion-item> 
+        <ion-label>{{ 'GENDER' | translate }}</ion-label>
+        <ion-select [(ngModel)]="account.gender" formControlName="gender"
+            okText="{{ 'OKAY' | translate }}" cancelText="{{ 'DISMISS' | translate }}" placeholder="{{ 'GENDER' | translate }}">
+          <ion-option value="M">{{ 'MALE' | translate }}</ion-option>
+          <ion-option value="F">{{ 'FEMALE' | translate }}</ion-option>
+        </ion-select>
+      </ion-item>   
+        <!--
+      <ion-badge *ngIf="(loginForm.controls.gender.hasError('required'))" class="error-message">
+          * {{ 'REQUIRE_ERROR' | translate }}</ion-badge>
+    //-->
+        
+      <ion-item> 
+        <ion-label>{{ 'BIRTHDAY' | translate }}</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="account.birthday"
+            formControlName="birthday" pickerFormat="YYYY MM DD" max="{{ currentDate }}"
+            doneText="{{ 'OKAY' | translate }}" cancelText="{{ 'DISMISS' | translate }}" placeholder="{{ 'BIRTHDAY' | translate }}">
+        </ion-datetime>
+      </ion-item> 
+        <!--
+      <ion-badge *ngIf="(loginForm.controls.birthday.hasError('required'))" class="error-message">
+          * {{ 'REQUIRE_ERROR' | translate }}</ion-badge>
+    //-->
+        
+      <ion-item>
+        <ion-label fixed>{{ 'NAME' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.name" formControlName="name" placeholder="{{ 'NAME' | translate }}"></ion-input>
+      </ion-item>
+        <!--
+      <ion-badge *ngIf="(loginForm.controls.name.hasError('required'))" class="error-message">
+          * {{ 'REQUIRE_ERROR' | translate }}</ion-badge>        
+//-->
+
+      <ion-item> 
+        <ion-label>{{ 'COUNTRY' | translate }}</ion-label>
+        <ion-select [(ngModel)]="account.country" formControlName="country"
+             okText="{{ 'OKAY' | translate }}" cancelText="{{ 'DISMISS' | translate }}" 
+             placeholder="{{ 'COUNTRY' | translate }}">
+          <ion-option value="TW">{{ 'COUNTRY_TW' | translate }}</ion-option>
+        </ion-select>
+      </ion-item>
+        <!--
+      <ion-badge *ngIf="(loginForm.controls.country.hasError('required'))" class="error-message">
+          * {{ 'REQUIRE_ERROR' | translate }}</ion-badge> 
+//-->
+        
+      <ion-item> 
+        <ion-label>{{ 'ADDRESS' | translate }}</ion-label>
+        <ion-select [(ngModel)]="account.county" formControlName="county"
+             okText="{{ 'OKAY' | translate }}" cancelText="{{ 'DISMISS' | translate }}"
+             (ionChange)="county_onSelectChange($event)"
+             [selectOptions]="{ title: countyText }" placeholder="{{ countyText }}">
+          <ion-option *ngFor="let countyItem of countyItems" [value]="countyItem.CountyId">
+              {{ countyItem.County }}</ion-option>
+        </ion-select>
+          
+        <ion-select [(ngModel)]="account.district" formControlName="district"
+             okText="{{ 'OKAY' | translate }}" cancelText="{{ 'DISMISS' | translate }}" 
+             [selectOptions]="{ title: districtText }" placeholder="{{ districtText }}">
+          <ion-option *ngFor="let districtItem of districtItems" [value]="districtItem.DistrictId">
+              {{ districtItem.District }}</ion-option>
+        </ion-select>
+      </ion-item> 
+        <!--
+      <ion-badge *ngIf="(loginForm.controls.county.hasError('required') || loginForm.controls.district.hasError('required'))" 
+        class="error-message">* {{ 'REQUIRE_ERROR' | translate }}</ion-badge> 
+//-->
+        
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="account.address" formControlName="address" 
+            placeholder="{{ 'ADDRESS' | translate }}"></ion-input>
+      </ion-item>  
+        <!--
+      <ion-badge *ngIf="(loginForm.controls.address.hasError('required'))" class="error-message">
+          * {{ 'REQUIRE_ERROR' | translate }}</ion-badge> 
+//-->
+        
+      <ion-item>
+        <ion-label fixed>{{ 'CONTACT_TEL' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.contact_telext" formControlName="contact_telext" 
+            placeholder="{{ 'TEL_AREA' | translate }}"></ion-input>
+        <ion-input type="text" [(ngModel)]="account.contact_tel" formControlName="contact_tel" 
+            placeholder="{{ 'CONTACT_TEL' | translate }}"></ion-input>
+      </ion-item> 
+      <ion-badge *ngIf="(loginForm.controls.contact_telext.hasError('required') || 
+                         loginForm.controls.contact_telext.hasError('minlength') || 
+                         loginForm.controls.contact_telext.hasError('maxlength') )" 
+         color="secondary">* {{ 'TEL_AREA_ERROR' | translate }}</ion-badge>
+      <ion-badge *ngIf="(loginForm.controls.contact_tel.hasError('required') || 
+                       loginForm.controls.contact_tel.hasError('minlength') || 
+                       loginForm.controls.contact_tel.hasError('maxlength') )" 
+         color="secondary">* {{ 'TEL_ERROR' | translate }}</ion-badge>        
+        
+      <ion-item>
+        <ion-label fixed>{{ 'MOBILE_TEL' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.mobile_telext" formControlName="mobile_telext" 
+            placeholder="{{ 'TEL_AREA' | translate }}"></ion-input>
+        <ion-input type="text" [(ngModel)]="account.mobile_tel" formControlName="mobile_tel" 
+            placeholder="{{ 'MOBILE_TEL' | translate }}"></ion-input>
+      </ion-item> 
+      <ion-badge *ngIf="(loginForm.controls.mobile_telext.hasError('required') || 
+                         loginForm.controls.mobile_telext.hasError('minlength') || 
+                         loginForm.controls.mobile_telext.hasError('maxlength') )" 
+         color="secondary">* {{ 'TEL_AREA_ERROR' | translate }}</ion-badge>
+      <ion-badge *ngIf="(loginForm.controls.mobile_tel.hasError('required') || 
+                         loginForm.controls.mobile_tel.hasError('minlength') || 
+                         loginForm.controls.mobile_tel.hasError('maxlength') )" 
+         color="secondary">* {{ 'TEL_ERROR' | translate }}</ion-badge>        
+        
+      <ion-item>
+        <ion-toggle [(ngModel)]="account.serviceterm" formControlName="serviceterm"></ion-toggle>
+        <ion-label (click)="showServiceTerm()" id="serviceterm_label">
+            {{ 'I_AGREED' | translate }}{{ 'SERVICE_TERM' | translate }}
+        </ion-label>
+      </ion-item> 
+        <!--
+      <ion-badge *ngIf="(loginForm.controls.serviceterm.hasError('required'))" class="error-message">
+          * {{ 'REQUIRE_ERROR' | translate }}</ion-badge>
+//-->
+<!--    
+    <ion-item [class.error]="!acct.valid && acct.touched">
+        <ion-label fixed>{{ 'ACCT' | translate }}</ion-label>
+        <ion-input type="text" [formControl]="acct"
+            placeholder="{{ 'ACCT' | translate }}"></ion-input>
+    </ion-item>
+    <div *ngIf="(acct.hasError('required') || acct.hasError('minlength') || acct.hasError('maxlength') ) && acct.touched" 
+        class="error-message">* {{ 'ACCT_ERROR' | translate }}</div>
+        
+    <form [formGroup]="loginForm" (submit)="doSignup()">
+      <ion-item>
+        <ion-label fixed>{{ 'ACCT' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="account.acct" [ngModelOptions]="{standalone: true}"
+            placeholder="{{ 'ACCT' | translate }}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
+        <ion-input type="email" [(ngModel)]="account.email" name="email" placeholder="{{ 'EMAIL' | translate }}"></ion-input>
+      </ion-item>
+        
+      <ion-item>
+        <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="account.password"  [ngModelOptions]="{standalone: true}"
+            placeholder="{{ 'PASSWORD' | translate }}"></ion-input>
+      </ion-item>
+        
+      <ion-item> 
+        <ion-label>{{ 'GENDER' | translate }}</ion-label>
+        <ion-select [(ngModel)]="account.gender" [ngModelOptions]="{standalone: true}"
+            okText="{{ 'OKAY' | translate }}" cancelText="{{ 'DISMISS' | translate }}" placeholder="{{ 'GENDER' | translate }}">
+          <ion-option value="M">{{ 'MALE' | translate }}</ion-option>
+          <ion-option value="F">{{ 'FEMALE' | translate }}</ion-option>
+        </ion-select>
+      </ion-item>   
+        
+      <ion-item> 
+        <ion-label>{{ 'BIRTHDAY' | translate }}</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="account.birthday" [ngModelOptions]="{standalone: true}"
+            pickerFormat="YYYY MM DD" max="{{ currentDate }}"
+            doneText="{{ 'OKAY' | translate }}" cancelText="{{ 'DISMISS' | translate }}" placeholder="{{ 'BIRTHDAY' | translate }}">
+        </ion-datetime>
+      </ion-item>              
+        
+      <ion-item>
+        <ion-label fixed>{{ 'NAME' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.name" name="name" placeholder="{{ 'NAME' | translate }}"></ion-input>
+      </ion-item>
+
+      <ion-item> 
+        <ion-label>{{ 'COUNTRY' | translate }}</ion-label>
+        <ion-select [(ngModel)]="account.country" [ngModelOptions]="{standalone: true}"
+             okText="{{ 'OKAY' | translate }}" cancelText="{{ 'DISMISS' | translate }}" 
+             placeholder="{{ 'COUNTRY' | translate }}">
+          <ion-option value="TW">{{ 'COUNTRY_TW' | translate }}</ion-option>
+        </ion-select>
+      </ion-item>  
+        
+      <ion-item> 
+        <ion-label>{{ 'ADDRESS' | translate }}</ion-label>
+        <ion-select [(ngModel)]="account.county" [ngModelOptions]="{standalone: true}"
+             okText="{{ 'OKAY' | translate }}" cancelText="{{ 'DISMISS' | translate }}"
+             (ionChange)="county_onSelectChange($event)"
+             [selectOptions]="{ title: countyText }" placeholder="{{ countyText }}">
+          <ion-option *ngFor="let countyItem of countyItems" [value]="countyItem.CountyId">
+              {{ countyItem.County }}</ion-option>
+        </ion-select>
+          
+        <ion-select [(ngModel)]="account.district" [ngModelOptions]="{standalone: true}"
+             okText="{{ 'OKAY' | translate }}" cancelText="{{ 'DISMISS' | translate }}" 
+             [selectOptions]="{ title: districtText }" placeholder="{{ districtText }}">
+          <ion-option *ngFor="let districtItem of districtItems" [value]="districtItem.DistrictId">
+              {{ districtItem.District }}</ion-option>
+        </ion-select>
+      </ion-item> 
+        
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="account.address" name="address" placeholder="{{ 'ADDRESS' | translate }}"></ion-input>
+      </ion-item>    
+        
+      <ion-item>
+        <ion-label fixed>{{ 'CONTACT_TEL' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.contact_telext" name="name" placeholder="{{ 'TEL_AREA' | translate }}"></ion-input>
+        <ion-input type="text" [(ngModel)]="account.contact_tel" name="name" placeholder="{{ 'CONTACT_TEL' | translate }}"></ion-input>
+      </ion-item> 
+        
+      <ion-item>
+        <ion-label fixed>{{ 'MOBILE_TEL' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.mobile_telext" name="name" placeholder="{{ 'TEL_AREA' | translate }}"></ion-input>
+        <ion-input type="text" [(ngModel)]="account.mobile_tel" name="name" placeholder="{{ 'MOBILE_TEL' | translate }}"></ion-input>
+      </ion-item>         
+      
+      <ion-item>
+        <ion-toggle [(ngModel)]="account.service_term" [ngModelOptions]="{standalone: true}"></ion-toggle>
+        <ion-label (click)="showServiceTerm()" id="service_term_label">
+            {{ 'I_AGREED' | translate }}{{ 'SERVICE_TERM' | translate }}
+        </ion-label>
+      </ion-item>
+        //-->
+      <div padding>
+        <button ion-button color="primary" block [disabled]="!loginForm.valid">{{ 'SIGNUP_BUTTON' | translate }}</button>
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>
