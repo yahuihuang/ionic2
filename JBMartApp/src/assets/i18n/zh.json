@@ -1,0 +1,97 @@
+{
+  "BACK_BUTTON_TEXT": "上一頁",
+
+  "ACCT": "帳號",
+  "CHECK_ACCOUNT": "檢查帳號",    
+  "ACCT_ERROR": "帳號可用英文/數字/中文，長度需介於5~50字元",
+  "EMAIL": "Email",
+  "EMAIL_ERROR": "請確認E-MAIL填寫正確",
+  "PASSWORD": "密碼",  
+  "PASSWORD_ERROR": "密碼可用英文/數字/中文，長度需介於8~20字元",
+  "GENDER": "性別",
+  "MALE": "男",
+  "FEMALE": "女",
+  "BIRTHDAY": "生日",
+  "NAME": "姓名",
+  "COUNTRY": "國家",
+  "COUNTRY_TW": "台灣",
+  "ADDRESS": "地址",
+  "COUNTY": "縣市",
+  "DISTRICT": "鄉鎮",
+  "CONTACT_TEL": "連絡電話",
+  "MOBILE_TEL": "行動電話",
+  "TEL_AREA": "區碼", 
+  "TEL_AREA_ERROR": "區碼長度需介於2~4字元",
+  "TEL_ERROR": "電話長度需介於6~8字元",
+  "I_AGREED": "我已同意",
+  "SERVICE_TERM": "服務條款", 
+  "REQUIRE_ERROR": "請輸入",
+  
+  "USERNAME": "使用者",
+  "LOGIN": "登錄",
+  "SIGNUP": "註冊",
+  "OKAY": "確定",
+  "DISMISS" : "取消", 
+
+  "TAB1_TITLE": "項目",
+  "TAB2_TITLE": "搜索",
+  "TAB3_TITLE": "設定",
+  "TAB4_TITLE": "QRCode",
+
+  "MAP_TITLE": "地圖",
+
+  "TUTORIAL_SKIP_BUTTON": "跳過",
+  "TUTORIAL_CONTINUE_BUTTON": "繼續",
+
+  "TUTORIAL_SLIDE1_TITLE": "歡迎來到楨寶好康A",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "<b>楨寶好康A</b>是您最好的選擇~",
+
+  "TUTORIAL_SLIDE2_TITLE": "如何使用楨寶好康A",
+  "TUTORIAL_SLIDE2_DESCRIPTION": "楨寶好康A操作手冊.",
+
+  "TUTORIAL_SLIDE3_TITLE": "入門",
+  "TUTORIAL_SLIDE3_DESCRIPTION": "需要幫助？查看楨寶好康A操作手冊.",
+
+  "TUTORIAL_SLIDE4_TITLE": "準備播放？",
+
+  "WELCOME_INTRO": "歡迎使用楨寶好康A",
+
+  "SETTINGS_TITLE": "設定",
+  "SETTINGS_OPTION1": "選項 1",
+  "SETTINGS_OPTION2": "選項 2",
+  "SETTINGS_OPTION3": "選項 3",
+  "SETTINGS_OPTION4": "選項 4",
+
+  "SETTINGS_PROFILE_BUTTON": "編輯個人資料",
+
+  "SETTINGS_PAGE_PROFILE": "編輯個人資料",
+
+  "WELCOME_TITLE": "歡迎",
+
+  "LOGIN_TITLE": "登錄",
+  "LOGIN_ERROR": "無法登錄。請檢查您的帳戶信息，然後再試一次.",
+  "LOGIN_BUTTON": "登錄",
+  "SIGNUP_TITLE": "註冊",
+  "SIGNUP_ERROR": "無法創建帳戶，請檢查您的帳戶信息，然後重試.",
+  "SIGNUP_BUTTON": "註冊",
+
+  "LIST_MASTER_TITLE": "項目",
+
+  "ITEM_CREATE_TITLE": "新項目",
+  "ITEM_CREATE_CHOOSE_IMAGE": "添加圖像",
+
+  "ITEM_NAME_PLACEHOLDER": "名稱",
+  "ITEM_ABOUT_PLACEHOLDER": "關於",
+
+  "DONE_BUTTON": "完成",
+  "CANCEL_BUTTON": "取消",
+  "DELETE_BUTTON": "刪除",
+
+  "CARDS_TITLE": "社交",
+
+  "SEARCH_TITLE": "搜索",
+  "SEARCH_PLACEHOLDER": "搜索項目列表, 如. \"Donald Duck\"",
+    
+  "QRCODE_TITLE": "QRCode掃描",
+  "QRCODE_HISTORY": "QRCode掃描歷史記錄"
+}

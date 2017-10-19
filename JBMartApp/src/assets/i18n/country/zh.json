@@ -1,0 +1,90 @@
+[
+    {
+        "CountyId": "09007",
+        "County": "連江縣"
+    },
+    {
+        "CountyId": "09020",
+        "County": "金門縣"
+    },
+    {
+        "CountyId": "10002",
+        "County": "宜蘭縣"
+    },
+    {
+        "CountyId": "10004",
+        "County": "新竹縣"
+    },
+    {
+        "CountyId": "10005",
+        "County": "苗栗縣"
+    },
+    {
+        "CountyId": "10007",
+        "County": "彰化縣"
+    },
+    {
+        "CountyId": "10008",
+        "County": "南投縣"
+    },
+    {
+        "CountyId": "10009",
+        "County": "雲林縣"
+    },
+    {
+        "CountyId": "10010",
+        "County": "嘉義縣"
+    },
+    {
+        "CountyId": "10013",
+        "County": "屏東縣"
+    },
+    {
+        "CountyId": "10014",
+        "County": "臺東縣"
+    },     	
+    {
+        "CountyId": "10015",
+        "County": "花蓮縣"
+    },
+    {
+        "CountyId": "10016",
+        "County": "澎湖縣"
+    },
+    {
+        "CountyId": "10017",
+        "County": "基隆市"
+    },
+    {
+        "CountyId": "10018",
+        "County": "新竹市"
+    },
+    {
+        "CountyId": "10020",
+        "County": "嘉義市"
+    },  
+    {
+        "CountyId": "63",
+        "County": "臺北市"
+    },
+    {
+        "CountyId": "64",
+        "County": "高雄市"
+    },
+    {
+        "CountyId": "65",
+        "County": "新北市"
+    },
+    {
+        "CountyId": "66",
+        "County": "臺中市"
+    },
+    {
+        "CountyId": "67",
+        "County": "臺南市"
+    },     
+    {
+        "CountyId": "68",
+        "County": "桃園市"
+    }
+]
